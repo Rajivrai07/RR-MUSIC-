@@ -197,30 +197,6 @@ fun About() = SettingsCategoryScreen(
         )
     }
 
-    SettingsGroup(title = stringResource(R.string.contact)) {
-        SettingsEntry(
-            title = stringResource(R.string.report_bug),
-            text = stringResource(R.string.report_bug_description),
-            onClick = {
-                uriHandler.openUri(
-                    @Suppress("MaximumLineLength")
-                    "https://github.com/$REPO_OWNER/$REPO_NAME/issues/new?assignees=&labels=bug&template=bug_report.yaml"
-                )
-            }
-        )
-
-        SettingsEntry(
-            title = stringResource(R.string.request_feature),
-            text = stringResource(R.string.redirect_github),
-            onClick = {
-                uriHandler.openUri(
-                    @Suppress("MaximumLineLength")
-                    "https://github.com/$REPO_OWNER/$REPO_NAME/issues/new?assignees=&labels=enhancement&template=feature_request.md"
-                )
-            }
-        )
-    }
-
     var newVersionDialogOpened by rememberSaveable { mutableStateOf(false) }
 
     SettingsGroup(title = stringResource(R.string.version)) {
