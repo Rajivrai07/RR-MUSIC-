@@ -189,10 +189,10 @@ fun About() = SettingsCategoryScreen(
 
     SettingsGroup(title = stringResource(R.string.social)) {
         SettingsEntry(
-            title = stringResource(R.string.github),
-            text = stringResource(R.string.view_source),
+                        title = "RAJIV RAI",
+                        text = "@Rajivrai.07",
             onClick = {
-                uriHandler.openUri("https://github.com/$REPO_OWNER/$REPO_NAME")
+                                uriHandler.openUri("https://instagram.com/Rajivrai.07")
             }
         )
     }
