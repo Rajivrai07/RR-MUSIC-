@@ -39,6 +39,10 @@ jobs:
           python-version: '3.14'
       - name: Build debug APK
         run: gradle :app:assembleDebug --no-daemon
+      - name: Generate debug keystore
+        run: |
+          mkdir -p $HOME/.android
+          keytool -genkey -v -keystore $HOME/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
       - name: Build release APK
         run: gradle :app:assembleRelease --no-daemon -Pandroid.injected.signing.store.file=$HOME/.android/debug.keystore -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android
       - name: Upload release APK
