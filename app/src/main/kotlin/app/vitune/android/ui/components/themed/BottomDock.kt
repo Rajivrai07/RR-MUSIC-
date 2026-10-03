@@ -108,7 +108,7 @@ fun BottomDock(
         }
     }
 
-    val dockShape = RoundedCornerShape(30.dp)
+    val dockShape = RoundedCornerShape(32.dp)
 
     Box(
         modifier = modifier
@@ -120,7 +120,7 @@ fun BottomDock(
                 ambientColor = Color.Black.copy(alpha = 0.25f)
             )
             .clip(dockShape)
-            .background(colorPalette.background1.copy(alpha = 0.72f))
+            .background(brush = Brush.verticalGradient(colors = listOf(Color.White.copy(alpha = 0.35f), Color.White.copy(alpha = 0.22f))))
             .border(
                 width = 1.dp,
                 color = Color.White.copy(alpha = 0.28f),
@@ -132,7 +132,7 @@ fun BottomDock(
             horizontalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 6.dp, vertical = 8.dp)
+                .padding(horizontal = 6.dp, vertical = 12.dp)
         ) {
             tabs.fastForEachIndexed { index, tab ->
                 AnimatedVisibility(
