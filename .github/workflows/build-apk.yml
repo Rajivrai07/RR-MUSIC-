@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       ANDROID_HOME: ${{ github.workspace }}/android-sdk
       ANDROID_SDK_ROOT: ${{ github.workspace }}/android-sdk
@@ -44,6 +46,12 @@ jobs:
         with:
           name: RR-Music-release-apk
           path: app/build/outputs/apk/release/*.apk
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.2.5
+          name: RR Music v1.2.5
+          files: app/build/outputs/apk/release/*.apk
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
