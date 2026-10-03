@@ -73,7 +73,7 @@ fun Scaffold(
             label = "",
             modifier = Modifier
                 .fillMaxSize()
-                .padding(bottom = 96.dp)
+                .padding(bottom = 126.dp)
         )
 
         BottomDock(
@@ -85,7 +85,7 @@ fun Scaffold(
             setHiddenTabs = { hiddenTabs = it.toImmutableList() },
             tabsEditingTitle = tabsEditingTitle,
             content = tabColumnContent,
-            modifier = Modifier.align(Alignment.BottomCenter)
+            modifier = Modifier.align(Alignment.BottomCenter).padding(horizontal = 16.dp, bottom = 22.dp)
         )
     }
 }
