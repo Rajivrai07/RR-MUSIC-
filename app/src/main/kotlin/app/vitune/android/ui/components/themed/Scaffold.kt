@@ -85,7 +85,7 @@ fun Scaffold(
             setHiddenTabs = { hiddenTabs = it.toImmutableList() },
             tabsEditingTitle = tabsEditingTitle,
             content = tabColumnContent,
-            modifier = Modifier.align(Alignment.BottomCenter).padding(horizontal = 16.dp, bottom = 22.dp)
+            modifier = Modifier.align(Alignment.BottomCenter).padding(start = 16.dp, end = 16.dp, bottom = 22.dp)
         )
     }
 }
